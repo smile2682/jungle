@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
   helper_method :cart
 
   def enhanced_cart
+    # a ||= b is a conditional assignment operator. It means if a is undefined or falsey, then evaluate b and set a to the result.
     @enhanced_cart ||= Product.where(id: cart.keys).map {|product| { product:product, quantity: cart[product.id.to_s] } }
   end
   helper_method :enhanced_cart
