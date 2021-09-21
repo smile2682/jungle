@@ -18,17 +18,9 @@ RSpec.describe Product, type: :model do
       # puts 'ERROR MESSAGE', @product.errors.full_messages
     end
 
-    it 'should not pass if the name field is nil' do
-      @category = Category.new(name:'computer related')
-      @product = Product.new(name:'auto-clicked mouse',price:nil,quantity:100, category:@category )
-      expect(@product).to_not be_valid
-      expect(@product.errors.full_messages).to be_present
-      # puts 'ERROR MESSAGE', @product.errors.full_messages
-    end
-
     it 'should not pass if the price field is nil' do
       @category = Category.new(name:'computer related')
-      @product = Product.new(name:'auto-clicked mouse',price:34.99,quantity:nil, category:@category )
+      @product = Product.new(name:'auto-clicked mouse',price:nil,quantity:100, category:@category )
       expect(@product).to_not be_valid
       expect(@product.errors.full_messages).to be_present
       # puts 'ERROR MESSAGE', @product.errors.full_messages
@@ -37,6 +29,14 @@ RSpec.describe Product, type: :model do
     it 'should not pass if the quantity field is nil' do
       @category = Category.new(name:'computer related')
       @product = Product.new(name:'auto-clicked mouse',price:34.99,quantity:nil, category:@category )
+      expect(@product).to_not be_valid
+      expect(@product.errors.full_messages).to be_present
+      # puts 'ERROR MESSAGE', @product.errors.full_messages
+    end
+
+    it 'should not pass if the category field is nil' do
+      @category = Category.new(name:'computer related')
+      @product = Product.new(name:'auto-clicked mouse',price:34.99,quantity:100, category:nil )
       expect(@product).to_not be_valid
       expect(@product.errors.full_messages).to be_present
       # puts 'ERROR MESSAGE', @product.errors.full_messages
