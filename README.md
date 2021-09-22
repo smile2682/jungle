@@ -3,7 +3,7 @@
 A mini e-commerce application built with Rails 4.2 for purposes of practicing Rails by example.
 
 ## Final Product
-
+!["Final Product"](https://raw.githubusercontent.com/smile2682/jungle/master/doc/Jungle.gif)
 
 ## Additional Steps for Apple M1 Machines
 
